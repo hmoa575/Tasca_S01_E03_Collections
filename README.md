@@ -1,86 +1,141 @@
-Tasca S01 E03 - Collections
+# Tasca S01 E03 - Java Collections
 
-Description
-This project contains the exercises for Sprint 1 - Task S01 E03 - Java Collections.
-The goal of this project is to practice the main Java collection classes such as:
+Practice project for Sprint 1 - Task S01 E03 focused on Java Collections, file handling, sorting, and console interaction.
 
-ArrayList
-HashSet
-HashMap
-ListIterator
+---
 
-It also includes file reading/writing and user interaction through the console.
+## Overview
 
-Technologies
-Java
-IntelliJ IDEA
+This repository contains a set of Java exercises designed to practice the most common collection types from `java.util`, including:
 
-Project Structure
-.
-├── Tasca_S01_E03_Collections.iml
-├── out
-│   └── production
-│       └── Tasca_S01_E03_Collections
-│           ├── countries.txt
-│           ├── level01exercise01
-│           │   ├── Main.class
-│           │   └── Month.class
-│           ├── level01exercise02
-│           │   ├── ListReverser.class
-│           │   └── Main.class
-│           ├── level01exercise03
-│           │   ├── FileInteraction.class
-│           │   ├── Game.class
-│           │   ├── Main.class
-│           │   ├── UI.class
-│           │   └── clasificacion.txt
-│           ├── level02exercise01
-│           │   ├── Main.class
-│           │   └── Restaurant.class
-│           └── level02exercise02
-│               ├── Main.class
-│               └── Restaurant.class
-└── src
-    ├── countries.txt
-    ├── level01exercise01
-    │   ├── Main.java
-    │   └── Month.java
-    ├── level01exercise02
-    │   ├── ListReverser.java
-    │   └── Main.java
-    ├── level01exercise03
-    │   ├── FileInteraction.java
-    │   ├── Game.java
-    │   ├── Main.java
-    │   ├── UI.java
-    │   └── clasificacion.txt
-    ├── level02exercise01
-    │   ├── Main.java
-    │   └── Restaurant.java
-    └── level02exercise02
-        ├── Main.java
-        └── Restaurant.java
+- `ArrayList`
+- `HashSet`
+- `HashMap`
+- `ListIterator`
 
+The project also includes:
+- object comparison with `equals()` and `hashCode()`
+- sorting with `Comparable` and `Comparator`
+- file reading and writing
+- console-based interaction with the user
 
-Level 1
-Exercise 1: Months management with ArrayList, HashSet, Iterator
-Exercise 2: Reverse list using ListIterator
-Exercise 3: Capital city game using HashMap, file reading, and console interaction
+---
 
-Level 2
-Exercise 1: HashSet with Restaurant objects and duplicate control using equals() and hashCode()
-Exercise 2: Restaurant sorting by name and score using Comparable or Comparator
+## Tech Stack
 
-Level 3
-Exercise 1: People manager with CSV reading, menu options, and sorting by name, surname, and DNI
+- Java
+- Maven
+- IntelliJ IDEA
 
-How to Run
+---
 
-Clone the repository
-from https://github.com/hmoa575/Tasca_S01_E03_Collections
+## Project Structure
 
-Open the project in IntelliJ IDEA
+```text
+src
+├── main
+│   └── java
+│       ├── level01exercise01
+│       ├── level01exercise02
+│       ├── level01exercise03
+│       ├── level02exercise01
+│       ├── level02exercise02
+│       └── level03...
+└── test
+    └── java
+        └── ...
+```
 
-Make sure the correct JDK is configured
+---
 
-Run the desired Main class
+## Exercises
+
+### Level 1
+
+#### Exercise 1 — Duplicates
+Work with `ArrayList` and `HashSet` to:
+- create `Month` objects
+- insert missing elements in the correct position
+- verify ordering
+- prevent duplicates
+- iterate using `for` and `Iterator`
+
+#### Exercise 2 — ListIterator
+Practice list traversal by:
+- creating a `List<Integer>`
+- reversing the values into a second list
+- using `ListIterator`
+
+#### Exercise 3 — Capital Game
+Build a console quiz game that:
+- reads countries and capitals from `countries.txt`
+- stores them in a `HashMap<String, String>`
+- asks the user 10 random questions
+- calculates the final score
+- saves results into `classificacio.txt`
+
+---
+
+### Level 2
+
+#### Exercise 1 — HashSet Without Exact Duplicates
+Create a `Restaurant` class and override:
+- `equals()`
+- `hashCode()`
+
+Goal:
+- allow restaurants with the same name if their score is different
+- prevent exact duplicates in a `HashSet`
+
+#### Exercise 2 — Multiple Sorting
+Sort `Restaurant` objects:
+- alphabetically by name
+- by score in descending order when names are equal
+
+Implemented with:
+- `Comparable`
+- or `Comparator`
+
+---
+
+### Level 3
+
+#### Exercise 1 — Person Manager with Sorting
+Read people from a CSV file and allow sorting by:
+- first name
+- last name
+- DNI
+
+Menu-based console application with multiple sorting options.
+
+---
+
+## How to Run
+
+### Option 1: IntelliJ IDEA
+1. Open the project in IntelliJ IDEA
+2. Configure the correct JDK
+3. Run the desired `Main` class
+
+### Option 2: Maven
+Run from the project root:
+
+```bash
+mvn clean compile
+mvn test
+```
+
+---
+
+## Resources
+
+Some exercises depend on external files, for example:
+
+- `countries.txt`
+- `classificacio.txt`
+
+Recommended location for input resources:
+
+```text
+src/main/resources/
+```
