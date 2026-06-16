@@ -9,21 +9,21 @@ public class Game {
 
     private static final int TOTAL_QUESTIONS = 10;
 
-    private final UI userInterface;
-    private final FileInteraction fileInteraction;
+    private final UI USERINTERFACE;
+    private final FileInteraction FILEINTERACTION;
     private Map<String, String> countryCapitalMap;
     private List<String> countriesList;
 
     public Game() {
-        this.userInterface = new UI();
-        this.fileInteraction = new FileInteraction();
+        this.USERINTERFACE = new UI();
+        this.FILEINTERACTION = new FileInteraction();
     }
 
     public void start() {
-        countryCapitalMap = fileInteraction.loadCountries();
+        countryCapitalMap = FILEINTERACTION.loadCountries();
 
         if (countryCapitalMap.isEmpty()) {
-            userInterface.showMessage("ERROR: No countries found.");
+            USERINTERFACE.showMessage("ERROR: No countries found.");
             return;
         }
 
@@ -32,15 +32,15 @@ public class Game {
         boolean playAgain;
         do {
             playOneGame();
-            playAgain = userInterface.askYesOrNo("Do you want to keep playing?");
+            playAgain = USERINTERFACE.askYesOrNo("Do you want to keep playing?");
         } while (playAgain);
 
-        userInterface.showMessage("Good Bye.");
-        userInterface.close();
+        USERINTERFACE.showMessage("Good Bye.");
+        USERINTERFACE.close();
     }
 
     private void playOneGame() {
-        String playerName = userInterface.readString("Enter your name: ");
+        String playerName = USERINTERFACE.readString("Enter your name: ");
 
         Collections.shuffle(countriesList);
 
@@ -49,16 +49,16 @@ public class Game {
         List<String> selectedCountries = countriesList.subList(0, questionsThisGame);
 
         if (available < TOTAL_QUESTIONS) {
-            userInterface.showMessage("Only " + available + " countries available.");
+            USERINTERFACE.showMessage("Only " + available + " countries available.");
         }
 
         int score = playGame(selectedCountries);
 
-        userInterface.showGameScore(playerName, score, questionsThisGame);
+        USERINTERFACE.showGameScore(playerName, score, questionsThisGame);
 
         if (questionsThisGame > 0) {
-            fileInteraction.saveScore(playerName, score);
-            userInterface.showMessage("Score saved to clasificacion.txt");
+            FILEINTERACTION.saveScore(playerName, score);
+            USERINTERFACE.showMessage("Score saved to clasificacion.txt");
         }
     }
 
@@ -68,14 +68,14 @@ public class Game {
         for (String country : selectedCountries) {
             String correctCapital = countryCapitalMap.get(country);
             String displayCountry = country.replace("_", " ");
-            String answer = userInterface.readString("What's the capital of " + displayCountry + "?");
+            String answer = USERINTERFACE.readString("What's the capital of " + displayCountry + "?");
 
             if (isAnswerCorrect(correctCapital, answer)) {
-                userInterface.showMessage("Correct answer! +1 point\n");
+                USERINTERFACE.showMessage("Correct answer! +1 point\n");
                 score++;
             } else {
                 String displayCapital = correctCapital.replace("_", " ");
-                userInterface.showMessage(
+                USERINTERFACE.showMessage(
                         "Wrong. The capital of " + displayCountry + " is " + displayCapital + ".\n"
                 );
             }
