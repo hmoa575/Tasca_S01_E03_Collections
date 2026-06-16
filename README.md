@@ -112,18 +112,13 @@ Menu-based console application with multiple sorting options.
 
 ## How to Run
 
-### Option 1: IntelliJ IDEA
+Clone from  https://github.com/hmoa575/Tasca_S01_E03_Collections
+
+### Option IntelliJ IDEA
 1. Open the project in IntelliJ IDEA
 2. Configure the correct JDK
 3. Run the desired `Main` class
 
-### Option 2: Maven
-Run from the project root:
-
-```bash
-mvn clean compile
-mvn test
-```
 
 ---
 
