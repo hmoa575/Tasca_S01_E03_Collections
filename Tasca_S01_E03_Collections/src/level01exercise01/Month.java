@@ -9,7 +9,7 @@ public class Month {
     public Month(String name) {
         this.name = name;
     }
-    //Getters and Setters
+    
     public String getName(){return name;}
 
     @Override
