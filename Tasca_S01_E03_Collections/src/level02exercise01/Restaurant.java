@@ -3,17 +3,17 @@ package level02exercise01;
 import java.util.Objects;
 
 public class Restaurant {
-    //Attributes
+
     private String name;
     private int score;
 
-    //Constructor
+
     public Restaurant(String name, int score) {
         this.name = name;
         this.score = score;
     }
 
-    //Getters
+
     public String getName() {
         return name;
     }
@@ -22,7 +22,7 @@ public class Restaurant {
         return score;
     }
 
-    //Setters
+
     public void setName(String name) {
         this.name = name;
     }
@@ -31,7 +31,7 @@ public class Restaurant {
         this.score = score;
     }
 
-    //equals() and hashCode()
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {

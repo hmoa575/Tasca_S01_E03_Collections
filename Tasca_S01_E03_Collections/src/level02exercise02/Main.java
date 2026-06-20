@@ -34,7 +34,10 @@ public class Main {
         List<Restaurant> sortedRestaurants = new ArrayList<>(sucursales);
         Collections.sort(sortedRestaurants);
 
-        System.out.println("List printed as ascending by name, and descending by score");
+
+        System.out.println("\nList printed as ascending by name, and descending by score");
         sucursales.forEach(System.out::println);
+        System.out.println("\n*******");
+        sortedRestaurants.forEach(System.out::println);
     }
 }

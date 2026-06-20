@@ -3,9 +3,9 @@ package level01exercise01;
 import java.util.Objects;
 
 public class Month {
-    //Attributes
+
     String name;
-    //Constructor
+
     public Month(String name) {
         this.name = name;
     }

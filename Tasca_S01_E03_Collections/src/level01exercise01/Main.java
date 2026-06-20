@@ -30,7 +30,6 @@ public class Main {
             System.out.println(o.getName());
         }
 
-        // monthsList is converted to monthsSet.
         Set<Month> monthsSet = new HashSet<>(monthsList);
         System.out.println("\n+++++ HashSet, and verify duplicates are not allowed.");
         boolean isAdded = monthsSet.add(new Month("April"));

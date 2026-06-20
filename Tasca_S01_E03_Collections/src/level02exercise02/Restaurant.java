@@ -3,17 +3,17 @@ package level02exercise02;
 import java.util.Objects;
 
 public class Restaurant implements Comparable<Restaurant> {
-    //Attributes
+
     private String name;
     private int score;
 
-    //Constructor
+
     public Restaurant(String name, int score) {
         this.name = name;
         this.score = score;
     }
 
-    //Getters
+
     public String getName() {
         return name;
     }
@@ -22,7 +22,7 @@ public class Restaurant implements Comparable<Restaurant> {
         return score;
     }
 
-    //Setters
+
     public void setName(String name) {
         this.name = name;
     }
@@ -31,7 +31,7 @@ public class Restaurant implements Comparable<Restaurant> {
         this.score = score;
     }
 
-    //equals() and hashCode()
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -48,14 +48,14 @@ public class Restaurant implements Comparable<Restaurant> {
         return Objects.hash(name, score);
     }
 
-    // Ascending by name
+
     @Override
     public int compareTo(Restaurant other) {
         int nameCompare = this.name.compareTo(other.name);
         if (nameCompare != 0) {
             return nameCompare;
         }
-        //Descending by score if the name is equal.
+
         return Integer.compare(other.score, this.score);
     }
 
