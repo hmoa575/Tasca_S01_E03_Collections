@@ -93,19 +93,6 @@ Sort `Restaurant` objects:
 Implemented with:
 - `Comparable`
 - or `Comparator`
-
----
-
-### Level 3
-
-#### Exercise 1 — Person Manager with Sorting
-Read people from a CSV file and allow sorting by:
-- first name
-- last name
-- DNI
-
-Menu-based console application with multiple sorting options.
-
 ---
 
 ## How to Run
